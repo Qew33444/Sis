@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="8.ico" type="image/x-icon">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-size: 18px;
+            margin: 0;
+        }
+        .answer {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answer li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .answer li:hover {
+            background-color: #f0f0f0;
+        }
+        .correct {
+            color: #4CAF50;
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+        .incorrect {
+            color: #f44336;
+            border-color: #f44336;
+            background-color: #ffebee;
+        }
+        .selected {
+            background-color: #e3f2fd;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Repeat this block for each question -->
+
+        <div class="container">
+        <!-- Question 1 -->
+        <div class="question" id="question-1">
+            <p>1. She __________ (to play) football every weekend.</p>
+            <ul class="answer">
+                <li data-value="a">a) plays</li>
+                <li data-value="b">b) play</li>
+                <li data-value="c">c) playing</li>
+                <li data-value="d">d) played</li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question" id="question-2">
+            <p>2. I __________ (to be) very happy today.</p>
+            <ul class="answer">
+                <li data-value="a">a) am</li>
+                <li data-value="b">b) is</li>
+                <li data-value="c">c) are</li>
+                <li data-value="d">d) be</li>
+            </ul>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" id="question-3">
+            <p>3. He has __________ dog and a cat.</p>
+            <ul class="answer">
+                <li data-value="a">a) a</li>
+                <li data-value="b">b) an</li>
+                <li data-value="c">c) the</li>
+                <li data-value="d">d) no article</li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question" id="question-4">
+            <p>4. They __________ (to watch) TV last night.</p>
+            <ul class="answer">
+                <li data-value="a">a) watched</li>
+                <li data-value="b">b) watch</li>
+                <li data-value="c">c) watches</li>
+                <li data-value="d">d) watching</li>
+            </ul>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question" id="question-5">
+            <p>5. This is my book. Where is __________?</p>
+            <ul class="answer">
+                <li data-value="a">a) yours</li>
+                <li data-value="b">b) you</li>
+                <li data-value="c">c) your</li>
+                <li data-value="d">d) yourself</li>
+            </ul>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question" id="question-6">
+            <p>6. We __________ (to go) to the park yesterday.</p>
+            <ul class="answer">
+                <li data-value="a">a) went</li>
+                <li data-value="b">b) go</li>
+                <li data-value="c">c) going</li>
+                <li data-value="d">d) gone</li>
+            </ul>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question" id="question-7">
+            <p>7. She lives __________ London.</p>
+            <ul class="answer">
+                <li data-value="a">a) in</li>
+                <li data-value="b">b) on</li>
+                <li data-value="c">c) at</li>
+                <li data-value="d">d) to</li>
+            </ul>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question" id="question-8">
+            <p>8. Choose the synonym for “big”:</p>
+            <ul class="answer">
+                <li data-value="a">a) Small</li>
+                <li data-value="b">b) Huge</li>
+                <li data-value="c">c) Thin</li>
+                <li data-value="d">d) Tiny</li>
+            </ul>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question" id="question-9">
+            <p>9. This is the __________ (expensive) car in the showroom.</p>
+            <ul class="answer">
+                <li data-value="a">a) most expensive</li>
+                <li data-value="b">b) more expensive</li>
+                <li data-value="c">c) expensive</li>
+                <li data-value="d">d) expensiver</li>
+            </ul>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question" id="question-10">
+            <p>10. He __________ up early every day.</p>
+            <ul class="answer">
+                <li data-value="a">a) wakes</li>
+                <li data-value="b">b) wakes up</li>
+                <li data-value="c">c) wake</li>
+                <li data-value="d">d) waking up</li>
+            </ul>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question" id="question-11">
+            <p>11. The project __________ (to complete) by the team.</p>
+            <ul class="answer">
+                <li data-value="a">a) was completed</li>
+                <li data-value="b">b) completed</li>
+                <li data-value="c">c) was completing</li>
+                <li data-value="d">d) complete</li>
+            </ul>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question" id="question-12">
+            <p>12. I will call you __________ I arrive.</p>
+            <ul class="answer">
+                <li data-value="a">a) when</li>
+                <li data-value="b">b) because</li>
+                <li data-value="c">c) if</li>
+                <li data-value="d">d) but</li>
+            </ul>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question" id="question-13">
+            <p>13. They have been __________ (to work) here for five years.</p>
+            <ul class="answer">
+                <li data-value="a">a) working</li>
+                <li data-value="b">b) work</li>
+                <li data-value="c">c) worked</li>
+                <li data-value="d">d) to work</li>
+            </ul>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question" id="question-14">
+            <p>14. I am always __________ late for meetings.</p>
+            <ul class="answer">
+                <li data-value="a">a) I always am</li>
+                <li data-value="b">b) I am always</li>
+                <li data-value="c">c) Late always I am</li>
+                <li data-value="d">d) Always I am late</li>
+            </ul>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question" id="question-15">
+            <p>15. She __________ (to read) books at the library.</p>
+            <ul class="answer">
+                <li data-value="a">a) reads</li>
+                <li data-value="b">b) read</li>
+                <li data-value="c">c) reading</li>
+                <li data-value="d">d) readed</li>
+            </ul>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question" id="question-16">
+            <p>16. We __________ (to have) dinner at 7 PM yesterday.</p>
+            <ul class="answer">
+                <li data-value="a">a) had</li>
+                <li data-value="b">b) have</li>
+                <li data-value="c">c) having</li>
+                <li data-value="d">d) has</li>
+            </ul>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question" id="question-17">
+            <p>17. He is good at __________ (to play) chess.</p>
+            <ul class="answer">
+                <li data-value="a">a) playing</li>
+                <li data-value="b">b) play</li>
+                <li data-value="c">c) plays</li>
+                <li data-value="d">d) played</li>
+            </ul>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question" id="question-18">
+            <p>18. The cat __________ (to sleep) on the couch now.</p>
+            <ul class="answer">
+                <li data-value="a">a) is sleeping</li>
+                <li data-value="b">b) sleeps</li>
+                <li data-value="c">c) sleep</li>
+                <li data-value="d">d) slept</li>
+            </ul>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question" id="question-19">
+            <p>19. My mother __________ (to cook) dinner every Sunday.</p>
+            <ul class="answer">
+                <li data-value="a">a) cooks</li>
+                <li data-value="b">b) cook</li>
+                <li data-value="c">c) cooked</li>
+                <li data-value="d">d) cooking</li>
+            </ul>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question" id="question-20">
+            <p>20. She __________ (to go) to the gym twice a week.</p>
+            <ul class="answer">
+                <li data-value="a">a) goes</li>
+                <li data-value="b">b) go</li>
+                <li data-value="c">c) going</li>
+                <li data-value="d">d) gone</li>
+            </ul>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="question" id="question-21">
+            <p>21. I __________ (to read) this book by the end of the week.</p>
+            <ul class="answer">
+                <li data-value="a">a) will read</li>
+                <li data-value="b">b) read</li>
+                <li data-value="c">c) am reading</li>
+                <li data-value="d">d) reads</li>
+            </ul>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question" id="question-22">
+            <p>22. The train __________ (to leave) at 6 PM.</p>
+            <ul class="answer">
+                <li data-value="a">a) leaves</li>
+                <li data-value="b">b) leave</li>
+                <li data-value="c">c) leaving</li>
+                <li data-value="d">d) left</li>
+            </ul>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question" id="question-23">
+            <p>23. I __________ (to visit) my grandparents last summer.</p>
+            <ul class="answer">
+                <li data-value="a">a) visited</li>
+                <li data-value="b">b) visit</li>
+                <li data-value="c">c) visiting</li>
+                <li data-value="d">d) visits</li>
+            </ul>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question" id="question-24">
+            <p>24. They __________ (to be) on vacation last month.</p>
+            <ul class="answer">
+                <li data-value="a">a) were</li>
+                <li data-value="b">b) are</li>
+                <li data-value="c">c) will be</li>
+                <li data-value="d">d) being</li>
+            </ul>
+        </div>
+    </div>
+
+        <button onclick="checkAnswers()">Check Answers</button>
+    </div>
+
+    <script>
+        const answers = {
+            "question-1": "b",
+            "question-2": "a",
+            "question-3": "a",
+            "question-4": "c",
+            "question-5": "b",
+            "question-6": "a",
+            "question-7": "b",
+            "question-8": "b",
+            "question-9": "b",
+            "question-10": "a",
+            "question-11": "a",
+            "question-12": "a",
+            "question-13": "a",
+            "question-14": "a",
+            "question-15": "a",
+            "question-16": "a",
+            "question-17": "b",
+            "question-18": "b",
+            "question-19": "b",
+            "question-20": "d",
+            "question-21": "b",
+            "question-22": "a",
+            "question-23": "b",
+            "question-24": "d"
+        };
+
+        function checkAnswers() {
+            document.querySelectorAll('.question').forEach(question => {
+                const selected = question.querySelector('.answer .selected');
+                const correctAnswer = answers[question.id];
+
+                question.querySelectorAll('.answer li').forEach(option => {
+                    if (option.getAttribute('data-value') === correctAnswer) {
+                        option.classList.add('correct');
+                    } else if (option.classList.contains('selected')) {
+                        option.classList.add('incorrect');
+                    }
+                });
+            });
+        }
+
+        document.querySelectorAll('.answer li').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.question');
+                question.querySelectorAll('.answer li').forEach(li => li.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
